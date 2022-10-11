@@ -21,14 +21,13 @@ galleryMain.addEventListener("click", onClick);
 function onClick(evt) {
   evt.preventDefault();
   const instance = basicLightbox.create(`
-    <img src="${evt.target.dataset.source}" width="800" height="600">
+    <img src="${evt.target.dataset.source}">
 `);
-
-  instance.show();
 
   if (!evt.target.classList.contains("gallery__image")) {
     return;
   }
+  instance.show();
 }
 
 function createGalleryItems(galleryItems) {
