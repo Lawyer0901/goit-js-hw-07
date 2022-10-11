@@ -21,7 +21,7 @@ galleryMain.addEventListener("click", onClick);
 function onClick(evt) {
   evt.preventDefault();
   const instance = basicLightbox.create(`
-    <img src="${evt.target.dataset.source}">
+    <img src="${evt.target.dataset.source} "width = 1200"">
 `);
 
   if (!evt.target.classList.contains("gallery__image")) {
@@ -32,15 +32,16 @@ function onClick(evt) {
 
 function createGalleryItems(galleryItems) {
   return galleryItems
-    .map(({ description, preview, original }) => {
-      return `<a class="gallery__link" href="large-image.jpg">
+    .map(
+      ({ description, preview, original }) =>
+        `<a class="gallery__link" href="large-image.jpg">
    <img
      class="gallery__image"
      src="${preview}"
      data-source="${original}"
      alt="${description}"
    />
- </a>`;
-    })
+ </a>`
+    )
     .join("");
 }
