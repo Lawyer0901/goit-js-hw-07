@@ -10,15 +10,16 @@ galleryMain.addEventListener("click", onClick);
 
 function onClick(evt) {
   evt.preventDefault();
-  const lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionsDelay: 250,
-  });
+
   if (evt.target.nodeName !== "IMG") {
     return;
   }
   lightbox.open();
 }
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionsDelay: 250,
+});
 
 function createGalleryItems(galleryItems) {
   return galleryItems
