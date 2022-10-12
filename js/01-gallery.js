@@ -24,7 +24,7 @@ function onClick(evt) {
     <img src="${evt.target.dataset.source} "width = 1200"">
 `);
 
-  if (!evt.target.classList.contains("gallery__image")) {
+  if (evt.target.nodeName !== "IMG") {
     return;
   }
   instance.show();
